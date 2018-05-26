@@ -24,6 +24,7 @@ public class AppHall {
 
 	public static void main(String[] args) {
 		initConfigPath();
+		LOGGER.info("configpath is：" + configPath);
 		// redis
 		redisManager = new JedisManager(configPath);
 //		RedissonManager.connectRedis(configPath);

@@ -30,7 +30,7 @@ public abstract class AbsMongoManager {
     public void createConnect(String configPath) {
         mongoConfig = FileUtil.getConfigXML(configPath, "mongoClientConfig.xml", MongoClientConfig.class);
         if (mongoConfig == null) {
-            throw new RuntimeException(String.format("mongodb 配置文件 %s/MongoClientConfig.xml 未找到", configPath));
+            throw new RuntimeException(String.format("mongodb 配置文件 %s/mongoClientConfig.xml 未找到", configPath));
         }
         MongoClientURI uri = new MongoClientURI(mongoConfig.getUrl());
         mongoClient = new MongoClient(uri);
